@@ -73,29 +73,17 @@ void inputRectangle(Rectangle &r) {
     cout << "Enter second point (x y): ";
     cin >> r.p2.x >> r.p2.y;
 
-    double minX, minY, maxX, maxY;
+    double x1 = min(r.p1.x, r.p2.x);
+    double y1 = min(r.p1.y, r.p2.y);
+    double x2 = max(r.p1.x, r.p2.x);
+    double y2 = max(r.p1.y, r.p2.y);
 
-    if(r.p1.x < r.p2.x) {
-        minX = r.p1.x;
-        maxX = r.p2.x;
-    } else {
-        minX = r.p2.x;
-        maxX = r.p1.x;
-    }
-    
-    if(r.p1.y < r.p2.y) {
-        minY = r.p1.y;
-        maxY = r.p2.y;
-    } else {
-        minY = r.p2.y;
-        maxY = r.p1.y;
-    }
-
-    r.p1.x = minX;
-    r.p1.y = minY;
-    r.p2.x = maxX;
-    r.p2.y = maxY;
+    r.p1.x = x1;
+    r.p1.y = y1;
+    r.p2.x = x2;
+    r.p2.y = y2;
 }
+
 
 
 void outputRectangle(const Rectangle &r) {
@@ -149,3 +137,4 @@ int main() {
     delete[] poly.coefficients; 
     return 0;
 }
+
