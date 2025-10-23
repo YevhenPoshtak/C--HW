@@ -1,5 +1,6 @@
 #include<iostream>
 #include<iomanip>
+#include<cmath>
 using namespace std;
 
 int main(){
@@ -8,12 +9,8 @@ int main(){
     cout << "enter x, y:" << "\n";
     cin >> x;
     cin >> y;
-    double result = x;
-    while(y > 1){
-        result *= x;
-        y--;
-    }
-    cout << dec << result << endl;
-    cout << scientific << result << endl;
+
+    cout << dec << pow(x,y) << endl;
+    cout << scientific << pow(x,y) << endl;
     return 0;
 }
