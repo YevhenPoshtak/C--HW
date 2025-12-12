@@ -131,7 +131,7 @@ public:
     string getDenominator() const { return denominator; }
 
     RationalNumber operator+(const RationalNumber& r) const {
-        string newNum = numerator + denominator + r.numerator + r.denominator;
+        string newNum = numerator + r.numerator;
         string newDen = denominator + r.denominator;
         return RationalNumber(newNum, newDen);
     }
@@ -309,3 +309,4 @@ int main() {
     }
 
     return 0;
+}
